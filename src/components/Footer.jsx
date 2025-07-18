@@ -1,5 +1,9 @@
 import { motion } from "framer-motion"
-
+import email from "../assets/email.png" // Adjust the path as necessary
+import phone from "../assets/phone.png" // Adjust the path as necessary
+import linkedin from "../assets/linkedin.svg" // Adjust the path as necessary
+import instagram from "../assets/instagram.png" // Adjust the path as necessary
+import phonenew from "../assets/phonenew.png" // Adjust the path as necessary
 export default function Footer() {
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -9,11 +13,24 @@ export default function Footer() {
     { name: "Contact Us", href: "#contact" },
   ]
 
-  const socialLinks = [
-    { name: "LinkedIn", icon: "💼", href: "#" },
-    { name: "Email", icon: "✉️", href: "mailto:tradesharkglobalexim@gmail.com" },
-    { name: "Phone", icon: "📞", href: "tel:+917982176193" },
-  ]
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/hitesh-sonawane-896296253",
+    icon: <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/tradesharkglobalexim?igsh=d2dtZnlvMXU4azA3",
+    icon: <img src={instagram} alt="Instagram" className="w-6 h-6" />,
+  },
+  {
+    name: "Email",
+    href: "mailto:tradesharkglobalexim@gmail.com",
+    icon: <img src={email} alt="Email" className="w-6 h-6" />,
+  },
+  
+]
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
@@ -34,7 +51,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-white">Trade Global Shark</h3>
+            <h3 className="text-2xl font-bold text-white">Trade Shark Global</h3>
             <p className="text-gray-300 leading-relaxed">
               Your trusted partner in international trade since 2012. Connecting global markets with excellence,
               integrity, and innovation.
@@ -46,9 +63,10 @@ export default function Footer() {
                   href={social.href}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-2xl hover:text-blue-400 transition-colors duration-200"
+                  className="text-4xl hover:text-blue-400 transition-colors duration-200 w-12 h-12 flex items-center justify-center "
                   title={social.name}
                 >
+                  
                   {social.icon}
                 </motion.a>
               ))}
@@ -119,7 +137,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
-          <p className="text-gray-400 text-sm">© Trade Global Shark 2012–2025. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© Trade Shark Global 2012–2025. All rights reserved.</p>
           <div className="flex space-x-6 text-sm">
             <motion.a
               href="#"

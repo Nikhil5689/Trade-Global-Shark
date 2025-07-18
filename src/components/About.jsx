@@ -5,8 +5,10 @@ export default function About() {
     { name: "Cosmetics", icon: "💄", description: "Premium beauty and skincare products" },
     { name: "Leather", icon: "👜", description: "High-quality leather goods and accessories" },
     { name: "Gems", icon: "💎", description: "Precious and semi-precious gemstones" },
-    { name: "Jewellery", icon: "💍", description: "Exquisite jewelry and ornaments" },
-    { name: "Other Exports", icon: "📦", description: "Diverse range of quality products" },
+    { name: "Agriculture", icon: "🌾", description: "Organic and conventional agricultural products" },
+    { name: "Food & Bevarages", icon: "🍏", description: "Quality food items and beverages" }, 
+    { name: "Handicrafts", icon: "🎨", description: "Artisanal crafts and handmade products" },
+    { name: "Other Exports", icon: "📦", description: "Diverse range of quality products like Jewellery , Textiles , Toys , Stationery & Puja Items" },
   ]
 
   const containerVariants = {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import logo from "../assets/logo.png" // Adjust the path as necessary
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -60,17 +61,26 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-white  backdrop-blur-md border-b border-gray-200/50"
     >
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <motion.div 
             whileHover={{ scale: 1.05 }} 
             className="flex-shrink-0 cursor-pointer"
             onClick={() => scrollToSection("#home")}
           >
-            <h1 className="text-xl font-bold text-blue-900">Trade Shark Global</h1>
+
+
+<img
+  src={logo}
+  alt="Trade Shark Global Logo"
+  className="h-20 w-32   object-cover l shadow-lg transition-transform duration-300 hover:scale-105   "
+/>
+                
           </motion.div>
+          
 
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (

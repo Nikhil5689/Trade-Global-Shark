@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-
+import hiteshprofile from "../assets/hiteshprofile.jpg" // Adjust the path as necessary
 export default function Team() {
   return (
     <section id="team" className="py-20 bg-white">
@@ -29,7 +29,7 @@ export default function Team() {
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
+                  src={hiteshprofile}
                   alt="Hitesh Sonawane - Director"
                   className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-white mx-auto"
                 />
@@ -60,7 +60,7 @@ export default function Team() {
                 </svg>
                 <blockquote className="text-2xl md:text-3xl font-light text-gray-800 italic leading-relaxed pl-8">
                   "Success in global trade comes from building lasting relationships, understanding diverse markets, and
-                  delivering excellence in every transaction. At Trade Global Shark, we don't just move products – we
+                  delivering excellence in every transaction. At Trade Shark Global, we don't just move products – we
                   connect dreams and opportunities across borders."
                 </blockquote>
               </div>
@@ -87,6 +87,7 @@ export default function Team() {
                 <div className="w-px h-8 bg-gray-300"></div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-900">Global</div>
+
                   <div className="text-sm text-gray-600">Network</div>
                 </div>
                 <div className="w-px h-8 bg-gray-300"></div>

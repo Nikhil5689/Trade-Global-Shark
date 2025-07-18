@@ -6,7 +6,7 @@ export default function Hero() {
 
   const slides = [
     {
-      title: "Global Import & Export Excellence",
+      title: "Your Trusted Partner in Global Commerce",
       subtitle: "Connecting markets worldwide with premium quality products",
     },
     {

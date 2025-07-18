@@ -42,7 +42,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get a Quote</h2>
           <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to expand your global trade? Get in touch with our experts today
@@ -60,7 +60,7 @@ export default function Contact() {
           >
             <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.234567890123!2d73.0123456789!3d19.0123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sUlwe%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed/v1/place?q=Tulsi+Sapphire,+Sector+8,+Ulwe,+Navi+Mumbai,+Maharashtra,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -68,6 +68,7 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Trade Global Shark Office Location"
+               
               ></iframe>
             </div>
 
