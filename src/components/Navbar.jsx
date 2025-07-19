@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import logo from "../assets/logo.png" // Adjust the path as necessary
+import logo from "../assets/logo.png"
+// import { delay } from "framer-motion/dom" // You don't need this import
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+
+  // Adjust this to your actual navbar height in px (for mobile)
+  const NAVBAR_HEIGHT = 80
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -19,7 +23,6 @@ export default function Navbar() {
       const sections = ["home", "about", "team", "services", "contact"]
       const scrollPosition = window.scrollY + 100
 
-      // Check if we're at the very top (home section)
       if (window.scrollY < 100) {
         setActiveSection("home")
         return
@@ -29,7 +32,10 @@ export default function Navbar() {
         const element = document.getElementById(section)
         if (element) {
           const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section)
             break
           }
@@ -37,50 +43,44 @@ export default function Navbar() {
       }
     }
 
-    // Set initial state
     handleScroll()
-    
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Updated scrollToSection with offset and delay for mobile menu
   const scrollToSection = (href) => {
+    setIsOpen(false)
     const element = document.querySelector(href)
     if (element) {
-      // Add offset for fixed navbar
-      const offsetTop = element.offsetTop - 80
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-      })
+      setTimeout(() => {
+        const yOffset = -NAVBAR_HEIGHT
+        const y =
+          element.getBoundingClientRect().top + window.scrollY + yOffset
+        window.scrollTo({ top: y, behavior: "smooth" })
+      }, 300) // Adjust delay if your menu transition is longer/shorter
     }
-    setIsOpen(false)
   }
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white  backdrop-blur-md border-b border-gray-200/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-200/50"
     >
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <motion.div 
-            whileHover={{ scale: 1.05 }} 
+          <motion.div
+            whileHover={{ scale: 1.05 }}
             className="flex-shrink-0 cursor-pointer"
             onClick={() => scrollToSection("#home")}
           >
-
-
-<img
-  src={logo}
-  alt="Trade Shark Global Logo"
-  className="h-20 w-32   object-cover l shadow-lg transition-transform duration-300 hover:scale-105   "
-/>
-                
+            <img
+              src={logo}
+              alt="Trade Shark Global Logo"
+              className="h-20 w-32 object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+            />
           </motion.div>
-          
 
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
@@ -104,12 +104,26 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 hover:text-blue-900 focus:outline-none">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation menu"
+              className="text-gray-700 hover:text-blue-900 focus:outline-none" 
+            >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12" 
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>

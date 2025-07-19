@@ -4,6 +4,7 @@ import phone from "../assets/phone.png" // Adjust the path as necessary
 import linkedin from "../assets/linkedin.svg" // Adjust the path as necessary
 import instagram from "../assets/instagram.png" // Adjust the path as necessary
 import phonenew from "../assets/phonenew.png" // Adjust the path as necessary
+
 export default function Footer() {
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -13,24 +14,23 @@ export default function Footer() {
     { name: "Contact Us", href: "#contact" },
   ]
 
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hitesh-sonawane-896296253",
-    icon: <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/tradesharkglobalexim?igsh=d2dtZnlvMXU4azA3",
-    icon: <img src={instagram} alt="Instagram" className="w-6 h-6" />,
-  },
-  {
-    name: "Email",
-    href: "mailto:tradesharkglobalexim@gmail.com",
-    icon: <img src={email} alt="Email" className="w-6 h-6" />,
-  },
-  
-]
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/hitesh-sonawane-896296253",
+      icon: <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/tradesharkglobalexim?igsh=d2dtZnlvMXU4azA3",
+      icon: <img src={instagram} alt="Instagram" className="w-6 h-6" />,
+    },
+    {
+      name: "Email",
+      href: "mailto:tradesharkglobalexim@gmail.com",
+      icon: <img src={email} alt="Email" className="w-6 h-6" />,
+    },
+  ]
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
@@ -65,8 +65,9 @@ const socialLinks = [
                   whileTap={{ scale: 0.9 }}
                   className="text-4xl hover:text-blue-400 transition-colors duration-200 w-12 h-12 flex items-center justify-center "
                   title={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  
                   {social.icon}
                 </motion.a>
               ))}
@@ -155,6 +156,21 @@ const socialLinks = [
             </motion.a>
           </div>
         </motion.div>
+
+        {/* Made by Websolute */}
+        <div className="pt-4 flex items-center justify-center text-gray-400 text-xs">
+          <span>
+            Made with <span className="text-red-500 text-base inline-block align-middle mx-1">♥</span> by{" "}
+            <a
+              href="https://websolute.in/"
+              className="text-blue-400 hover:underline hover:text-blue-500 font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Websolute
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   )
